@@ -1,4 +1,4 @@
-const through = require('through2')
+const replace = require('replacestream')
 const fs = require('fs')
 
 function appendReplacer (file, capture, ...match) {
@@ -14,11 +14,7 @@ function extract (file, options) {
   if (!options.regex) throw 'Collectify is missing required regex option'
 
   let replacer = appendReplacer.bind(this, options.file, options.capture)
-  return through(function (buf, enc, next) {
-    let contents = buf.toString('utf8').replace(options.regex, replacer)
-    this.push(contents)
-    next()
-  })
+  return replace(options.regex, replacer)
 }
 
 module.exports = function collectify (b, options) {

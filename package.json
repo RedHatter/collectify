@@ -17,7 +17,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "browserify": "^16.1.0",
-    "through2": "^2.0.3"
+    "replacestream": "^4.0.3"
   },
   "repository": "github:RedHatter/collectify"
 }
