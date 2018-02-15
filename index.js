@@ -9,6 +9,10 @@ function appendReplacer (file, capture, ...match) {
 }
 
 function extract (file, options) {
+  if (!options) throw 'Collectify is missing required options.'
+  if (!options.file) throw 'Collectify is missing required file option'
+  if (!options.regex) throw 'Collectify is missing required regex option'
+
   let replacer = appendReplacer.bind(this, options.file, options.capture)
   return through(function (buf, enc, next) {
     let contents = buf.toString('utf8').replace(options.regex, replacer)
