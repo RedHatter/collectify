@@ -20,10 +20,10 @@ We could, for example, extract all style tags and collect the contents into an e
     var fs = require("fs");
     var browserify = require("browserify");
     browserify("./script.js")
-      .plugin('collectify', {
-        file: './public/styles.css',
+      .plugin("collectify", {
+        file: "./public/styles.css",
         regex: /<style>([\s\S]+?)<\/style>/g,
         capture: 1
       })
       .bundle()
-      .pipe(fs.createWriteStream("bundle.js"));
+      .pipe(fs.createWriteStream("./public/bundle.js"));
