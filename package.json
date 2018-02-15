@@ -1,0 +1,22 @@
+{
+  "name": "collectify",
+  "version": "1.0.0",
+  "description": "Extract text by regular expression and collect it in a file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "browserify",
+    "browserify-plugin",
+    "transform",
+    "regex",
+    "extract"
+  ],
+  "author": "Timothy Johnson",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "browserify": "^16.1.0",
+    "through2": "^2.0.3"
+  }
+}
